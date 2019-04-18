@@ -35,10 +35,27 @@ export default {
 <style lang="scss" scoped>
 .s-steps {
   // padding-bottom: 120px;
+  overflow: hidden;
+  max-width: 100%;
   &__item {
+    overflow: hidden;
+    max-width: 100%;
     &:nth-child(even) {
+      .s-steps__text-wrapper{
+        &:after {
+          right: calc(100% - 40px);
+        }
+      }
+      
       .s-steps__content {
         flex-direction: row-reverse;
+      }
+    }
+    &:nth-child(odd) {
+      .s-steps__text-wrapper{
+        &:after {
+          left: calc(100% - 40px);
+        }
       }
     }
     &:first-child {
@@ -71,6 +88,19 @@ export default {
     text-align: left;
     padding: 12.25% 7% 0;
     box-sizing: border-box;
+    background: #fff;
+    border-radius: 40px;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 500px;
+      background: #fff;
+      top: 0;
+    }
   }
   &__title {
     display: block;

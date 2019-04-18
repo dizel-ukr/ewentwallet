@@ -15,7 +15,7 @@
           in a single <span class="s-header__title_blue">wallet</span>
         </div>
 
-        <Buttons />
+        <Buttons v-if="chekWidth" />
       </div>
 
       <div class="s-header__img-wrapper">
@@ -34,6 +34,11 @@ export default {
   components: {
     LangSwitch,
     Buttons
+  },
+  computed: {
+    chekWidth(){
+      return innerWidth > 640
+    }
   }
 };
 </script>
@@ -52,6 +57,7 @@ export default {
     max-width: 100%;
     height: 50px;
     margin: 0 auto;
+    box-sizing: border-box;
   }
 
   &__wrapper {
@@ -68,7 +74,7 @@ export default {
     color: white;
     text-align: left;
     font: 600 5.6rem/1.25 "Montserrat", sans-serif;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 130px;
     text-transform: uppercase;
 
@@ -90,7 +96,44 @@ export default {
     img {
       // width: 100%;
       margin: 0 -120px;
-      max-width: 98%;
+      max-width: 100%;
+    }
+  }
+}
+@media (max-width: 1388px){
+  .s-header {
+    &__hat,
+    &__title-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+  }
+}
+@media(max-width: 640px){
+  .s-header {
+    background: url("../assets/header-bg-small.png") top center no-repeat;
+    background-size: 100%;
+
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__title-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    &__img-wrapper {
+      width: 100%;
+      padding-top: 70px;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__title {
+      margin-top: 40px;
+      margin-bottom: 0;
     }
   }
 }
