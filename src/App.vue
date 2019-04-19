@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,600&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700&subset=cyrillic");
 html,
 body {
   padding: 0;
@@ -52,6 +52,12 @@ div, span {
   color: #2c3e50;
   margin: 0;
   padding: 0;
+}
+@media(max-width: 1280px){
+  html,
+  body {
+    font-size: 9px !important;
+  }
 }
 @media(max-width: 960px){
   html,

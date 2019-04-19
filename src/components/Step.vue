@@ -1,19 +1,21 @@
 <template>
-  <div class="s-steps__item" :key="step.id">
-    <div class="s-steps__line">
+  <div class="s-step__item" :key="step.id">
+    <div class="s-step__line">
         <img v-if="step.id == 1" src="../assets/left-to-center-img.png" alt="">
         <img v-else-if="step.id % 2 == 0" src="../assets/left-to-right-img.png" alt="">
         <img v-else-if="step.id % 2 == 1" src="../assets/right-to-left-img.png" alt="">
+        <span class="s-step__line-number">{{ step.id }}</span>
     </div>
 
-    <div class="s-steps__content">
-      <div class="s-steps__img">
-        <img :src="step.imgUrl" alt="" />
+    <div class="s-step__content">
+      <div class="s-step__img">
+        <img v-if="checkWidth" :src="step.imgUrl" alt="" />
+        <img v-else :src="step.imgAltUrl" alt="" />
       </div>
-      <div class="s-steps__text-wrapper">
-        <span class="s-steps__title">{{ step.title }}</span>
-        <span class="s-steps__text">{{ step.text }}</span>
-        <a class="s-steps__link" href="#">Get the App ></a>
+      <div class="s-step__text-wrapper">
+        <span class="s-step__title">{{ step.title }}</span>
+        <span class="s-step__text">{{ step.text }}</span>
+        <span class="s-step__link" v-on:click="scroll">Get the App ></span>
       </div>
     </div>
   </div>
@@ -27,39 +29,53 @@ export default {
         id: Number,
         title: String,
         text: String,
-        imgUrl: String
+        imgUrl: String,
+        imgAltUrl: String
+    }
+  },
+  computed: {
+    checkWidth: function() {
+      return window.innerWidth > 640;
+    }
+  },
+  methods: {
+    scroll: function(){      
+      window.scrollTo({
+          top: document.querySelector('#id-prefooter').offsetTop,
+          behavior: "smooth"
+      });
+      // document.querySelector('#id-prefooter').pageYOffset
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.s-steps {
-  // padding-bottom: 120px;
+.s-step {
   overflow: hidden;
   max-width: 100%;
   &__item {
     overflow: hidden;
     max-width: 100%;
     &:nth-child(even) {
-      .s-steps__text-wrapper{
+      .s-step__text-wrapper{
         &:after {
           right: calc(100% - 40px);
         }
       }
       
-      .s-steps__content {
+      .s-step__content {
         flex-direction: row-reverse;
       }
     }
     &:nth-child(odd) {
-      .s-steps__text-wrapper{
+      .s-step__text-wrapper{
         &:after {
           left: calc(100% - 40px);
         }
       }
     }
     &:first-child {
-      margin-top: -115px;
+      // margin-top: -115px;
     }
   }
   &__line {
@@ -68,8 +84,12 @@ export default {
     margin: 0 auto;
 
     img {
-        max-width: 100%;
+      width: 1370px;
+      max-width: 100%;
     }
+  }
+  &__line-number {
+      display: none;
   }
   &__content {
     width: 1388px;
@@ -86,7 +106,7 @@ export default {
   &__text-wrapper {
     width: 50%;
     text-align: left;
-    padding: 12.25% 7% 0;
+    padding: 10% 7% 0;
     box-sizing: border-box;
     background: #fff;
     border-radius: 40px;
@@ -126,5 +146,75 @@ export default {
       text-decoration: underline;
     }
   }
+}
+@media(max-width: 640px){
+    .s-step {
+
+        &__item {
+            // margin-top: -45px;
+            z-index: 1;
+            background: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 60px), #a7d9ff calc(100% - 59px) ,#a7d9ff 100%);
+
+            &:first-child {
+                margin-top: 0;
+                .s-step__line-number {
+                    padding-top: 0;
+                }
+            }
+            &:nth-child(even){
+              background: linear-gradient(to bottom, #a7d9ff 0%, #a7d9ff calc(100% - 60px), transparent calc(100% - 59px) ,transparent 100%);
+
+                .s-step__line-number {
+                    color: #fff;
+                    border-color: #fff;
+                }
+            }
+        }
+        &__line {
+            padding-top: 20px;
+            img {
+                display: none;
+            }
+        }
+        &__line-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 35px;
+            border: 2px solid #a7d9ff;
+            border-radius: 50%;
+
+            font: 400 16px/40px "Montserrat", sans-serif;
+            color: #a7d9ff;
+        }
+        &__content {
+            flex-direction: column-reverse !important;
+            // margin-bottom: -20px;
+            img {
+                // box-shadow: 0 0 10px rgba(0,0,0,.2);
+                z-index: 9999;
+            }
+        }
+        &__img,
+        &__text-wrapper {
+            width: 100%;
+            background: none;
+            padding-top: 0;
+            text-align: center;
+
+            &:after {
+                display: none;
+            }
+        }
+        &__title,
+        &__text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        &__link {
+            display: inline-block;
+            margin-bottom: 45px;
+        }
+    }
 }
 </style>
