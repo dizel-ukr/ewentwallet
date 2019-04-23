@@ -1,7 +1,7 @@
 <template>
   <div class="s-step__item" :key="step.id">
     <div class="s-step__line">
-        <img v-if="step.id == 1" src="../assets/left-to-center-img.png" alt="">
+        <img v-if="step.id == 1" src="../assets/left-to-center2-img.png" alt="">
         <img v-else-if="step.id % 2 == 0" src="../assets/left-to-right-img.png" alt="">
         <img v-else-if="step.id % 2 == 1" src="../assets/right-to-left-img.png" alt="">
         <span class="s-step__line-number">{{ step.id }}</span>
@@ -124,23 +124,24 @@ export default {
   }
   &__title {
     display: block;
-    font: 600 6rem/1 "Montserrat", sans-serif;
+    font: 600 5.9rem/1 "Montserrat", sans-serif;
     color: #222349;
     // margin-top: 170px;
-    margin-bottom: 120px;
+    margin-bottom: 18%;
     text-align: left;
   }
   &__text {
     display: block;
-    font: 400 2rem/1.5 "Montserrat", sans-serif;
+    font: 400 2.4rem/1.5 "Montserrat", sans-serif;
     color: #222349;
     text-align: left;
     margin-bottom: 25px;
   }
   &__link {
-    font: 600 1.8rem/1 "Montserrat", sans-serif;
+    font: 600 2rem/1 "Montserrat", sans-serif;
     color: #007aff;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       text-decoration: underline;
@@ -149,9 +150,7 @@ export default {
 }
 @media(max-width: 640px){
     .s-step {
-
         &__item {
-            // margin-top: -45px;
             z-index: 1;
             background: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 60px), #a7d9ff calc(100% - 59px) ,#a7d9ff 100%);
 
@@ -189,9 +188,7 @@ export default {
         }
         &__content {
             flex-direction: column-reverse !important;
-            // margin-bottom: -20px;
             img {
-                // box-shadow: 0 0 10px rgba(0,0,0,.2);
                 z-index: 9999;
             }
         }
@@ -212,8 +209,9 @@ export default {
             margin-bottom: 30px;
         }
         &__link {
-            display: inline-block;
-            margin-bottom: 45px;
+          font-size: 2.5rem;
+          display: inline-block;
+          margin-bottom: 45px;
         }
     }
 }

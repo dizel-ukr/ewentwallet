@@ -1,9 +1,10 @@
 <template>
   <div class="s-header">
+    
     <div class="s-header__hat">
       <img src="../assets/logo.png" alt="" class="sheader__logo" />
       <div class="s-header__land-switcher">
-        <!--<LangSwitch />-->
+        <LangSwitch v-bind:onSelectLang='onSelectLang' lang='zh'/>
       </div>
     </div>
 
@@ -36,6 +37,9 @@ export default {
     LangSwitch,
     Buttons
   },
+  params: {
+    data: Object
+  },
   mounted: function () {
       window.addEventListener('resize', this.getWindowWidth);
   },
@@ -50,14 +54,17 @@ export default {
   methods: {
 		getWindowWidth() {
 				// chekWidth
-		}
+    },
+    onSelectLang(lang){
+      console.log('child component said login', lang.d)
+    }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .s-header {
+  position: relative;
   min-height: 800px;
   background: url("../assets/header-bg.png") top center no-repeat;
 
@@ -65,7 +72,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1388px;
+    width: 1280px;
     max-width: 100%;
     height: 50px;
     margin: 0 auto;
@@ -139,6 +146,7 @@ export default {
     &__hat,
     &__title-wrapper {
       padding-left: 100px;
+      padding-right: 100px;
     }
   }
 }
@@ -147,6 +155,7 @@ export default {
     &__hat,
     &__title-wrapper {
       padding-left: 60px;
+      padding-right: 60px;
     }
   }
 }
@@ -156,6 +165,10 @@ export default {
     background-size: 100%;
     min-height: 650px;
 
+    &__hat {
+      padding-left: 20px;
+      padding-right: 35px;
+    }
     &__wrapper {
       flex-direction: column;
       align-items: center;
@@ -165,6 +178,7 @@ export default {
       box-sizing: border-box;
       text-align: center;
       padding-left: 20px;
+      padding-right: 20px;
     }
     &__img-wrapper {
       width: 100%;

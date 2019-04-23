@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header msg="Welcome to Your Vue.js App" />
+    
+    <Header :data=langData[0].header />
     <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
 
     <Steps />
@@ -28,7 +29,21 @@ export default {
     AllinOne,
     PreFooter,
     Footer
-  }
+  },
+  data () {
+      return {
+        langData: [
+          {
+            header: {
+                title: {
+                  ru: '<b>В</b>аши <span class="s-header__title_orange">мкроприятия</span><br />и билеты<br />в одном <span class="s-header__title_blue">кошельке</span>',
+                  en: '<b>Y</b>our <span class="s-header__title_orange">events</span><br />and tickets<br />in a single <span class="s-header__title_blue">wallet</span>'
+                }
+              }
+          }
+        ]
+      }
+    }
 };
 </script>
 
@@ -53,19 +68,19 @@ div, span {
   margin: 0;
   padding: 0;
 }
-@media(max-width: 1280px){
+@media (max-width: 1280px){
   html,
   body {
     font-size: 9px !important;
   }
 }
-@media(max-width: 960px){
+@media (max-width: 960px){
   html,
   body {
     font-size: 8px !important;
   }
 }
-@media(max-width: 720px){
+@media (max-width: 720px){
   html,
   body {
     font-size: 7px !important;

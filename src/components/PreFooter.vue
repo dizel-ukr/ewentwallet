@@ -3,7 +3,7 @@
         <div class="s-prefooter__title">Time to create your first event QR!</div>
         <div class="s-prefooter__content">
             <div class="s-prefooter__qr-wrapper">
-                <div class="s-prefooter__text">Scan the QR code below<br>or press the Google Play / App Store buttons below<br>to download the app to your phone right now!</div>
+                <div class="s-prefooter__text">Scan the QR code below or press the Google Play / App Store buttons below to download the app to your phone right now!</div>
                 <div class="s-prefooter__qr">
                     <img src="../assets/qr.png" alt="" srcset="">
                 </div>
@@ -41,17 +41,19 @@ export default {
         width: 1388px;
         margin: 0 auto;
         max-width: 100%;
+        padding: 0 40px;
+        box-sizing: border-box;
     }
     &__qr-wrapper {
         width: 50%;
-        padding: 65px 5.8% 85px;
+        padding: 65px 5.8%;
         box-sizing: border-box;
         background: #fff;
         border-radius: 50px;
-        margin-bottom: 20px;
+        margin: 20px auto;
     }
     &__text {
-        font: 400 2rem/1.5 "Montserrat", sans-serif;
+        font: 400 2.4rem/1.5 "Montserrat", sans-serif;
         margin-bottom: 50px;
     }
     &__qr {
@@ -102,6 +104,9 @@ export default {
             padding: 0;
             border-radius: 0;
             margin: 0;
+        }
+        &__content {
+            padding: 0;
         }
         .buttons {
             flex-direction: column;

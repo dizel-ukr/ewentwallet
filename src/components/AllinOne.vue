@@ -47,12 +47,12 @@ export default {
     margin: 0 0 20px;
   }
   &__text {
-    font: 400 2rem/1 "Montserrat", sans-serif;
+    font: 400 2rem/1.45 "Montserrat", sans-serif;
     color: #222349;
     margin-bottom: 50px;
   }
   &__link {
-    font: 600 1.8rem/1 "Montserrat", sans-serif;
+    font: 600 2rem/1 "Montserrat", sans-serif;
     color: #007aff;
     text-decoration: none;
     cursor: pointer;
