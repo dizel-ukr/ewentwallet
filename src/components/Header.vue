@@ -4,7 +4,7 @@
     <div class="s-header__hat">
       <img src="../assets/logo.png" alt="" class="sheader__logo" />
       <div class="s-header__land-switcher">
-        <LangSwitch v-bind:onSelectLang='onSelectLang' lang='zh'/>
+        <LangSwitch v-bind:onSelectLang='onSelectLang' lang='cn'/>
       </div>
     </div>
 
@@ -41,6 +41,7 @@ export default {
     data: Object
   },
   mounted: function () {
+      window.addEventListener('resize', this.getWindowWidth);
       window.addEventListener('resize', this.getWindowWidth);
   },
   beforeDestroy: function () {
@@ -96,8 +97,8 @@ export default {
   &__title {
     color: white;
     text-align: left;
-    font: 700 5.6rem/1.25 "Montserrat", sans-serif;
-    margin-top: 50px;
+    font: 700 5rem/1.25 "Montserrat", sans-serif;
+    margin-top: 80px;
     margin-bottom: 130px;
     text-transform: uppercase;
     width: 640px;
@@ -133,10 +134,11 @@ export default {
 }
 @media (max-width: 1388px){
   .s-header {
+    &__hat {width: 100%;}
     &__hat,
     &__title-wrapper {
       padding-left: 20px;
-      padding-right: 20px;
+      padding-right: 60px;
       box-sizing: border-box;
     }
   }
@@ -146,23 +148,23 @@ export default {
     &__hat,
     &__title-wrapper {
       padding-left: 100px;
-      padding-right: 100px;
+      padding-right: 120px;
     }
   }
 }
-@media (max-width: 1280px){
+@media (max-width: 960px){
   .s-header {
     &__hat,
     &__title-wrapper {
       padding-left: 60px;
-      padding-right: 60px;
+      padding-right: 80px;
     }
   }
 }
 @media(max-width: 640px){
   .s-header {
     background: url("../assets/header-bg-small.png") top center no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     min-height: 650px;
 
     &__hat {

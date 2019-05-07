@@ -30,7 +30,7 @@ export default {
           id: 2,
           title: "Share event QR",
           text:
-            "Publish your event QR code in all channels or share it from the app to invite attendees, friends, colleagues and partners",
+            "Publish your event QR code anywhere or share it from the app to invite attendees, friends and partners",
           imgUrl: "/step-two-img.png",
           imgAltUrl: "/step-two-altimg.png"
         },
@@ -38,14 +38,14 @@ export default {
           id: 3,
           title: "Scan event QR",
           text:
-            "Save events in your personal “wallet” simply by scanning QR codes and never miss out any of them",
+            "Save events in your personal “wallet” simply by scanning QR codes, and never miss out any of them",
           imgUrl: "/step-three-img.png",
           imgAltUrl: "/step-three-altimg.png"
         },
         {
           id: 4,
           title: "Save tickets",
-          text: "Store tickets in a single “wallet” to acces them anytime",
+          text: "Store tickets in a single “wallet” to skip the lines at the entrance – just show your ticket in the app",
           imgUrl: "/step-four-img.png",
           imgAltUrl: "/step-four-altimg.png"
         }
@@ -55,10 +55,8 @@ export default {
   methods: {
     scrollToNext: function(){      
       window.scrollTo({
-          top: document.querySelector('.s-header').offsetHeight,
-          behavior: "smooth"
+          top: document.querySelector('.s-header').offsetHeight
       });
-      // document.querySelector('#id-prefooter').pageYOffset
     }
   }
 };

@@ -4,7 +4,7 @@
     <div class="langs__all" style="display: none;">
       <span class="langs__lang" v-on:click='selectLang' data-lang='ru' selected=''>ru</span>
       <span class="langs__lang" v-on:click='selectLang' data-lang='en' selected='selected'>en</span>
-      <span class="langs__lang" v-on:click='selectLang' data-lang='zh' selected=''>zh</span>
+      <span class="langs__lang" v-on:click='selectLang' data-lang='cn' selected=''>cn</span>
     </div>
   </div>
 </template>

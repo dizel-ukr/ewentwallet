@@ -39,7 +39,11 @@ export default {
   padding-top: 70px;
   padding-bottom: 85px;
   max-width: 100%;
-  background: linear-gradient(to bottom, #ffffff 0, transparent 210px, transparent 100%);
+  background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -o-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -webkit-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -ms-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
 
   &__title {
     font: 600 6rem/1 "Montserrat", sans-serif;
@@ -63,7 +67,8 @@ export default {
   }
   &__img {
     margin-top: 90px;
-    max-width: 100%;
+    width: 1280px;
+    max-width: 90%;
 
     img {
         max-width: 98%;

@@ -55,9 +55,7 @@ body {
   margin: 0;
   font-size: 10px;
   background: #f7f3e9;
-}
-div, span {
-  // border: 1px solid red; // TODO
+  scroll-behavior: smooth;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
