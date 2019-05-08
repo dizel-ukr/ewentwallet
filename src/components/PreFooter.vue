@@ -45,12 +45,12 @@ export default {
         box-sizing: border-box;
     }
     &__qr-wrapper {
-        width: 50%;
+        width: 60%;
         padding: 50px 5.6%;
         box-sizing: border-box;
         background: #fff;
         border-radius: 50px;
-        margin: 20px auto;
+        margin: 20px 0 20px 125px;
     }
     &__text {
         font: 400 2.2rem/1.5 "Montserrat", sans-serif;
@@ -73,6 +73,13 @@ export default {
     }
     .buttons {
         justify-content: center;
+    }
+}
+@media(max-width: 1280px){
+    .s-prefooter {
+        &__qr-wrapper {
+            margin: 0 auto;
+        }
     }
 }
 @media(max-width: 640px){

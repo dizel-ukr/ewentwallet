@@ -53,7 +53,7 @@ export default {
   &__text {
     font: 400 2rem/1.45 "Montserrat", sans-serif;
     color: #222349;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   &__link {
     font: 600 2rem/1 "Montserrat", sans-serif;
@@ -66,8 +66,8 @@ export default {
     }
   }
   &__img {
-    margin-top: 90px;
-    width: 1280px;
+    margin-top: 70px;
+    width: 1080px;
     max-width: 90%;
 
     img {
