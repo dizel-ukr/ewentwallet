@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    
-    <Header :data=langData[0].header />
-    <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
+    <div>
+      <a href="#" @click="setLocale('en')">en</a>
+      <a href="#" @click="setLocale('ru')">ru</a>
+      <a href="#" @click="setLocale('cn')">cn</a>
+    </div>
+
+    <Header />
+    <!-- <HelloWorld :msg="$t('title')" /> -->
 
     <Steps />
     <AllinOne />
@@ -19,7 +24,7 @@ import AllinOne from "./components/AllinOne.vue";
 import PreFooter from "./components/PreFooter.vue";
 import Footer from "./components/Footer.vue";
 
-// import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "app",
@@ -28,22 +33,14 @@ export default {
     Steps,
     AllinOne,
     PreFooter,
-    Footer
+    Footer,
+    HelloWorld
   },
-  data () {
-      return {
-        langData: [
-          {
-            header: {
-                title: {
-                  ru: '<b>В</b>аши <span class="s-header__title_orange">мкроприятия</span><br />и билеты<br />в одном <span class="s-header__title_blue">кошельке</span>',
-                  en: '<b>Y</b>our <span class="s-header__title_orange">events</span><br />and tickets<br />in a single <span class="s-header__title_blue">wallet</span>'
-                }
-              }
-          }
-        ]
-      }
+  methods: {
+    setLocale(locale){
+      this.$i18n.locale = locale
     }
+  }
 };
 </script>
 

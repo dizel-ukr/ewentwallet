@@ -1,0 +1,11 @@
+{
+    "en": {
+        "title": "<b>Y</b>our <span class='s-header__title_orange'>events</span><br />and tickets<br />in a single <span class='s-header__title_blue'>wallet</span>"
+    },
+    "ru": {
+        "title": "Ваш личный кошелек мероприятий"
+    },
+    "cn": {
+        "title": "您的展会门票在个人钱包中"
+    }
+}

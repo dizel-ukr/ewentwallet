@@ -1,6 +1,6 @@
 <template>
   <div class="s-header">
-    
+    <p>{{$t('title')}}</p>
     <div class="s-header__hat">
       <img src="../assets/logo.png" alt="" class="sheader__logo" />
       <div class="s-header__land-switcher">
@@ -11,9 +11,7 @@
     <div class="s-header__wrapper">
       <div class="s-header__title-wrapper">
         <div class="s-header__title">
-          <b>Y</b>our <span class="s-header__title_orange">events</span><br />
-          and tickets<br />
-          in a single <span class="s-header__title_blue">wallet</span>
+          {{$t('title')}}
         </div>
 
         <Buttons v-if="chekWidth" />
