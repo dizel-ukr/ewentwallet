@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .s-header {
   position: relative;
   min-height: 800px;

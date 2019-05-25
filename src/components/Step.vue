@@ -33,7 +33,6 @@
   </div>
 </template>
 <script>
-// console.log(step);
 export default {
   name: "Step",
   props: {
@@ -79,9 +78,6 @@ export default {
           left: calc(100% - 40px);
         }
       }
-    }
-    &:first-child {
-      // margin-top: -115px;
     }
   }
   &__line {
