@@ -1,11 +1,131 @@
 {
     "en": {
-        "title": "<b>Y</b>our <span class='s-header__title_orange'>events</span><br />and tickets<br />in a single <span class='s-header__title_blue'>wallet</span>"
+        "title": "<b>Y</b>our <span class='s-header__title_orange'>events</span><br />and tickets<br />in a single <span class='s-header__title_blue'>wallet</span>",
+        "allevents": "All events in a single Wallet!",
+        "frombirthday": "From birthdays to music festivals – invite attendees to make it an experience, or save events to remember them all",
+        "timeto": "Time to create your first event QR!",
+        "scanqr": "Scan the QR code below or press the Google Play / App Store buttons to download the app right now!",
+        "privacy": "Privacy policy",
+        "getgplay": "Get it on Google Play",
+        "getappstore": "Download on the App Store",
+        "signin": "Sign in",
+        "allrights": " All rights reserved, EventsWallet 2019",
+        "gettheapp": "Get the App",
+        "steps": {
+            "1": {
+                "id": 1,
+                "title": "Create event QR",
+                "text": "Create unique QR code for your event, engage attendees and make it an experience",
+                "imgUrl": "/step-one-img.png",
+                "imgAltUrl": "/step-one-altimg.png"
+            },
+            "2": {
+                "id": 2,
+                "title": "Share event QR",
+                "text": "Publish your event QR code anywhere or share it from the app to invite attendees, friends and partners",
+                "imgUrl": "/step-two-img.png",
+                "imgAltUrl": "/step-two-altimg.png"
+            },
+            "3": {
+              "id": 3,
+              "title": "Scan event QR",
+              "text": "Save events in your personal “wallet” simply by scanning QR codes, and never miss out any of them",
+              "imgUrl": "/step-three-img.png",
+              "imgAltUrl": "/step-three-altimg.png"
+            },
+            "4": {
+              "id": 4,
+              "title": "Save tickets",
+              "text": "Store tickets in a single “wallet” to skip the lines at the entrance – just show your ticket in the app",
+              "imgUrl": "/step-four-img.png",
+              "imgAltUrl": "/step-four-altimg.png"
+            }
+        }
     },
     "ru": {
-        "title": "Ваш личный кошелек мероприятий"
+        "title": "Ваш личный кошелек мероприятий",
+        "allevents": "Мероприятий много, EventsWallet – один!",
+        "frombirthday": "От дней рождения до музыкальных фестивалей – приглашайте посетителей,<br> чтобы сделать ваш ивент незабываемым, или сохраняйте мероприятия,<br> и не пропустите ни одно из них",
+        "timeto": "Создайте свой первый QR-код мероприятия!",
+        "scanqr": "Отсканируйте QR-код ниже или нажмите на Google Play / App Store, чтобы загрузить приложение в ваш телефон прямо сейчас!",
+        "privacy": "Политика конфиденциальности",
+        "getgplay": "Доступно в Google Play",
+        "getappstore": "Загрузите в App Store",
+        "signin": "Вход",
+        "allrights": "Все права защищены, EventsWallet 2019",
+        "gettheapp": "Скачать приложение",
+        "steps": {
+            "1": {
+                "id": 1,
+                "title": "Создайте QR-код",
+                "text": "Создайте уникальный QR-код вашего мероприятия, привлеките посетителей, и сделайте ивент незабываемым",
+                "imgUrl": "/step-one-img.png",
+                "imgAltUrl": "/step-one-altimg.png"
+            },
+            "2": {
+                "id": 2,
+                "title": "Размещайте QR-код",
+                "text": "Разместите QR-код мероприятия во всех каналах, или поделитесь им с клиентами, друзьями и партнерами",
+                "imgUrl": "/step-two-img.png",
+                "imgAltUrl": "/step-two-altimg.png"
+            },
+            "3": {
+              "id": 3,
+              "title": "Сканируйте QR-код",
+              "text": "Сохраняйте мероприятия в ваш личный “кошелек”, просто сканируя QR-коды, чтобы не пропустить ни один ивент",
+              "imgUrl": "/step-three-img.png",
+              "imgAltUrl": "/step-three-altimg.png"
+            },
+            "4": {
+              "id": 4,
+              "title": "Сохраняйте билеты",
+              "text": "Сохраняйте билеты в “кошелек”, чтобы не стоять в очереди у входа – просто покажите билет в приложении",
+              "imgUrl": "/step-four-img.png",
+              "imgAltUrl": "/step-four-altimg.png"
+            }
+        }
     },
     "cn": {
-        "title": "您的展会门票在个人钱包中"
+        "title": "您的展会门票在个人钱包中",
+        "allevents": "所有的展会都在您的个人钱包中！",
+        "frombirthday": "从生日会到音乐节——邀请观众参加使其成为一种体验，<br>或保存展会以免错过",
+        "timeto": "是时候创建您的首个展会二维码!",
+        "scanqr": "打印下方二维码或点击Google Play / App Store 按钮下载客户端APP至您的手机！",
+        "privacy": "隐私政策",
+        "getgplay": "在Google Play下载客户端",
+        "getappstore": "在App Store下载客户端",
+        "signin": "签名",
+        "allrights": "版权所有，EventsWallet 2019",
+        "gettheapp": "下载APP",
+        "steps": {
+            "1": {
+                "id": 1,
+                "title": "创建展会二维码",
+                "text": "为您的展会创建专属二维码，吸引专业观众前来参观",
+                "imgUrl": "/step-one-img.png",
+                "imgAltUrl": "/step-one-altimg.png"
+            },
+            "2": {
+                "id": 2,
+                "title": "分享展会二维码",
+                "text": "发布您的展会二维码在所有社交渠道或者从客户端直接分享给朋友，同事以及合作伙伴，吸引他们来参观展会。",
+                "imgUrl": "/step-two-img.png",
+                "imgAltUrl": "/step-two-altimg.png"
+            },
+            "3": {
+              "id": 3,
+              "title": "打印展会二维码",
+              "text": "通过扫描二维码可直接保存展会至您的个人展会“钱包”，以免错过任何展会信息",
+              "imgUrl": "/step-three-img.png",
+              "imgAltUrl": "/step-three-altimg.png"
+            },
+            "4": {
+              "id": 4,
+              "title": "保存门票",
+              "text": "将门票保存在个人“钱包”中以随时查看它们",
+              "imgUrl": "/step-four-img.png",
+              "imgAltUrl": "/step-four-altimg.png"
+            }
+        }
     }
 }

@@ -1,10 +1,10 @@
 <template>
   <div class="langs">
-    <div class="langs__currentLang" v-on:click='openLang'>{{ lang }}</div>
+    <div class="langs__currentLang" v-on:click='openLang'>en</div>
     <div class="langs__all" style="display: none;">
-      <span class="langs__lang" v-on:click='selectLang' data-lang='ru' selected=''>ru</span>
-      <span class="langs__lang" v-on:click='selectLang' data-lang='en' selected='selected'>en</span>
-      <span class="langs__lang" v-on:click='selectLang' data-lang='cn' selected=''>cn</span>
+      <span class="langs__lang" v-on:click="setLocale('en')" data-lang='en' selected=''>en</span>
+      <span class="langs__lang" v-on:click="setLocale('ru')" data-lang='ru' selected='selected'>ru</span>
+      <span class="langs__lang" v-on:click="setLocale('cn')" data-lang='cn' selected=''>cn</span>
     </div>
   </div>
 </template>
@@ -12,14 +12,12 @@
 export default {
   props: {
     lang: String,
-    onSelectLang: Function
+    onSelectLang: Function,
   },
   methods: {
-    openLang(event){
-      var el = document.querySelector('.langs__all');
-      el.style.display = (el.style.display == 'none') ? 'block' : 'none'
-    },
-    selectLang(event){
+    setLocale(locale){
+      this.$i18n.locale = locale;
+
       document.querySelector('.langs__currentLang').innerText = event.target.dataset.lang;
       
       document.querySelector('.langs__all').style.display = 'none';
@@ -27,6 +25,13 @@ export default {
       this.onSelectLang({
         d: event.target.dataset.lang
       })
+    },
+    openLang(event){
+      var el = document.querySelector('.langs__all');
+      el.style.display = (el.style.display == 'none') ? 'block' : 'none'
+    },
+    selectLang(event){
+      
     }
   }
 }

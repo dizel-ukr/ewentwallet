@@ -1,10 +1,20 @@
 <template>
   <div class="s-step__item" :key="step.id">
     <div class="s-step__line">
-        <img v-if="step.id == 1" src="../assets/left-to-center2-img.png" alt="">
-        <img v-else-if="step.id % 2 == 0" src="../assets/left-to-right-img.png" alt="">
-        <img v-else-if="step.id % 2 == 1" src="../assets/right-to-left-img.png" alt="">
-        <span class="s-step__line-number">{{ step.id }}</span>
+      <img v-if="step.id == 1" src="../assets/left-to-center2-img.png" alt="" />
+      <img
+        v-else-if="step.id % 2 == 0"
+        src="../assets/left-to-right-img.png"
+        alt=""
+      />
+      <img
+        v-else-if="step.id % 2 == 1"
+        src="../assets/right-to-left-img.png"
+        alt=""
+      />
+      <span class="s-step__line-number">
+        {{ step.id }}
+      </span>
     </div>
 
     <div class="s-step__content">
@@ -15,7 +25,9 @@
       <div class="s-step__text-wrapper">
         <span class="s-step__title">{{ step.title }}</span>
         <span class="s-step__text">{{ step.text }}</span>
-        <span class="s-step__link" v-on:click="scroll">Get the App ></span>
+        <span class="s-step__link" v-on:click="scroll">
+          {{ $t("gettheapp") }} >
+        </span>
       </div>
     </div>
   </div>
@@ -25,13 +37,8 @@
 export default {
   name: "Step",
   props: {
-    step: {
-        id: Number,
-        title: String,
-        text: String,
-        imgUrl: String,
-        imgAltUrl: String
-    }
+    step: Object,
+    i: String
   },
   computed: {
     checkWidth: function() {
@@ -39,12 +46,11 @@ export default {
     }
   },
   methods: {
-    scroll: function(){      
+    scroll: function() {
       window.scrollTo({
-          top: document.querySelector('#id-prefooter').offsetTop,
-          behavior: "smooth"
+        top: document.querySelector("#id-prefooter").offsetTop,
+        behavior: "smooth"
       });
-      // document.querySelector('#id-prefooter').pageYOffset
     }
   }
 };
@@ -57,18 +63,18 @@ export default {
     overflow: hidden;
     max-width: 100%;
     &:nth-child(even) {
-      .s-step__text-wrapper{
+      .s-step__text-wrapper {
         &:after {
           right: calc(100% - 40px);
         }
       }
-      
+
       .s-step__content {
         flex-direction: row-reverse;
       }
     }
     &:nth-child(odd) {
-      .s-step__text-wrapper{
+      .s-step__text-wrapper {
         &:after {
           left: calc(100% - 40px);
         }
@@ -89,7 +95,7 @@ export default {
     }
   }
   &__line-number {
-      display: none;
+    display: none;
   }
   &__content {
     width: 1388px;
@@ -100,7 +106,7 @@ export default {
   &__img {
     width: 50%;
     img {
-        max-width: 100%;
+      max-width: 100%;
     }
   }
   &__text-wrapper {
@@ -113,7 +119,7 @@ export default {
     position: relative;
 
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       height: 100%;
@@ -148,71 +154,83 @@ export default {
     }
   }
 }
-@media(max-width: 640px){
-    .s-step {
-        &__item {
-            z-index: 1;
-            background: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 60px), #a7d9ff calc(100% - 59px) ,#a7d9ff 100%);
+@media (max-width: 640px) {
+  .s-step {
+    &__item {
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent calc(100% - 60px),
+        #a7d9ff calc(100% - 59px),
+        #a7d9ff 100%
+      );
 
-            &:first-child {
-                margin-top: 0;
-                .s-step__line-number {
-                    padding-top: 0;
-                }
-            }
-            &:nth-child(even){
-              background: linear-gradient(to bottom, #a7d9ff 0%, #a7d9ff calc(100% - 60px), transparent calc(100% - 59px) ,transparent 100%);
+      &:first-child {
+        margin-top: 0;
+        .s-step__line-number {
+          padding-top: 0;
+        }
+      }
+      &:nth-child(even) {
+        background: linear-gradient(
+          to bottom,
+          #a7d9ff 0%,
+          #a7d9ff calc(100% - 60px),
+          transparent calc(100% - 59px),
+          transparent 100%
+        );
 
-                .s-step__line-number {
-                    color: #fff;
-                    border-color: #fff;
-                }
-            }
+        .s-step__line-number {
+          color: #fff;
+          border-color: #fff;
         }
-        &__line {
-            padding-top: 20px;
-            img {
-                display: none;
-            }
-        }
-        &__line-number {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin-bottom: 35px;
-            border: 2px solid #a7d9ff;
-            border-radius: 50%;
-
-            font: 400 16px/40px "Montserrat", sans-serif;
-            color: #a7d9ff;
-        }
-        &__content {
-            flex-direction: column-reverse !important;
-            img {
-                z-index: 9999;
-            }
-        }
-        &__img,
-        &__text-wrapper {
-            width: 100%;
-            background: none;
-            padding-top: 0;
-            text-align: center;
-
-            &:after {
-                display: none;
-            }
-        }
-        &__title,
-        &__text {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        &__link {
-          font-size: 2.5rem;
-          display: inline-block;
-          margin-bottom: 45px;
-        }
+      }
     }
+    &__line {
+      padding-top: 20px;
+      img {
+        display: none;
+      }
+    }
+    &__line-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 35px;
+      border: 2px solid #a7d9ff;
+      border-radius: 50%;
+
+      font: 400 16px/40px "Montserrat", sans-serif;
+      color: #a7d9ff;
+    }
+    &__content {
+      flex-direction: column-reverse !important;
+      img {
+        z-index: 9999;
+      }
+    }
+    &__img,
+    &__text-wrapper {
+      width: 100%;
+      background: none;
+      padding-top: 0;
+      text-align: center;
+
+      &:after {
+        display: none;
+      }
+    }
+    &__title,
+    &__text {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    &__link {
+      font-size: 2.5rem;
+      display: inline-block;
+      margin-bottom: 45px;
+    }
+  }
 }
 </style>

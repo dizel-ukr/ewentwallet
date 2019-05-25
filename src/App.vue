@@ -1,17 +1,8 @@
 <template>
   <div id="app">
-    <div>
-      <a href="#" @click="setLocale('en')">en</a>
-      <a href="#" @click="setLocale('ru')">ru</a>
-      <a href="#" @click="setLocale('cn')">cn</a>
-    </div>
-
     <Header />
-    <!-- <HelloWorld :msg="$t('title')" /> -->
-
     <Steps />
     <AllinOne />
-
     <PreFooter />
     <Footer />
   </div>
@@ -24,8 +15,6 @@ import AllinOne from "./components/AllinOne.vue";
 import PreFooter from "./components/PreFooter.vue";
 import Footer from "./components/Footer.vue";
 
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "app",
   components: {
@@ -33,12 +22,11 @@ export default {
     Steps,
     AllinOne,
     PreFooter,
-    Footer,
-    HelloWorld
+    Footer
   },
   methods: {
-    setLocale(locale){
-      this.$i18n.locale = locale
+    setLocale(locale) {
+      this.$i18n.locale = locale;
     }
   }
 };
@@ -63,19 +51,19 @@ body {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
   html,
   body {
     font-size: 9px !important;
   }
 }
-@media (max-width: 960px){
+@media (max-width: 960px) {
   html,
   body {
     font-size: 8px !important;
   }
 }
-@media (max-width: 720px){
+@media (max-width: 720px) {
   html,
   body {
     font-size: 7px !important;

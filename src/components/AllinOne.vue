@@ -1,10 +1,7 @@
 <template>
   <div class="s-allinone">
-    <div class="s-allinone__title">All events in a single Wallet!</div>
-    <div class="s-allinone__text">
-      From birthdays to music festivals – invite attendees to make it an
-      experience,<br />or save events to remember them all
-    </div>
+    <div class="s-allinone__title">{{$t('allevents')}}</div>
+    <div class="s-allinone__text" v-html="$t('frombirthday')" />
     <a class="s-allinone__link" v-on:click="scroll">Get the app ></a>
     <img v-if="checkWidth" class="s-allinone__img" src="../assets/allinone-img.png" alt="" />
     <img v-else class="s-allinone__img" src="../assets/allinone-img-small.png" alt="" />

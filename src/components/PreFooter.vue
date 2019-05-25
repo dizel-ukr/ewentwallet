@@ -1,9 +1,9 @@
 <template>
     <div id="id-prefooter" class="s-prefooter">
-        <div class="s-prefooter__title">Time to create your first event QR!</div>
+        <div class="s-prefooter__title">{{ $t('timeto')}}</div>
         <div class="s-prefooter__content">
             <div class="s-prefooter__qr-wrapper">
-                <div class="s-prefooter__text">Scan the QR code below or press the Google Play / App Store buttons to download the app right now!</div>
+                <div class="s-prefooter__text">{{$t('scanqr')}}</div>
                 <div class="s-prefooter__qr">
                     <img src="../assets/qr.png" alt="" srcset="">
                 </div>

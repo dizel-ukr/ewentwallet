@@ -1,6 +1,5 @@
 <template>
   <div class="s-header">
-    <p>{{$t('title')}}</p>
     <div class="s-header__hat">
       <img src="../assets/logo.png" alt="" class="sheader__logo" />
       <div class="s-header__land-switcher">
@@ -10,9 +9,7 @@
 
     <div class="s-header__wrapper">
       <div class="s-header__title-wrapper">
-        <div class="s-header__title">
-          {{$t('title')}}
-        </div>
+        <div class="s-header__title" v-html="$t('title')"></div>
 
         <Buttons v-if="chekWidth" />
       </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="s-footer">
     <div class="s-footer__nav">
-        <a class="s-footer__nav-item" href="//eventswallet.com/en/privacy">Privacy Policy</a>
-        <a class="s-footer__nav-item" href="//play.google.com/store/apps/details?id=edsson.eventswallet">Get it on Google Play</a>
-        <a class="s-footer__nav-item" href="//itunes.apple.com/us/app/eventswallet/id1457564301?ls=1&mt=8">Download on the App Store</a>
-        <a class="s-footer__nav-item" href="//eventswallet.com">Sign in</a>
+        <a class="s-footer__nav-item" href="//eventswallet.com/en/privacy">{{$t('privacy')}}</a>
+        <a class="s-footer__nav-item" href="//play.google.com/store/apps/details?id=edsson.eventswallet">{{$t('getgplay')}}</a>
+        <a class="s-footer__nav-item" href="//itunes.apple.com/us/app/eventswallet/id1457564301?ls=1&mt=8">{{$t('getappstore')}}</a>
+        <a class="s-footer__nav-item" href="//eventswallet.com">{{$t('signin')}}</a>
     </div>
-    <div class="s-footer__copy">(c) All rights reserved, EventsWallet 2019</div>
+    <div class="s-footer__copy">(c){{$t('allrights')}}</div>
   </div>
 </template>
 
