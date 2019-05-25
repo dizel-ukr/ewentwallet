@@ -1,9 +1,9 @@
 <template>
     <div id="id-prefooter" class="s-prefooter">
-        <div class="s-prefooter__title">Time to create your first event QR!</div>
+        <div class="s-prefooter__title">{{ $t('timeto')}}</div>
         <div class="s-prefooter__content">
             <div class="s-prefooter__qr-wrapper">
-                <div class="s-prefooter__text">Scan the QR code below<br>or press the Google Play / App Store buttons below<br>to download the app to your phone right now!</div>
+                <div class="s-prefooter__text">{{$t('scanqr')}}</div>
                 <div class="s-prefooter__qr">
                     <img src="../assets/qr.png" alt="" srcset="">
                 </div>
@@ -27,12 +27,12 @@ export default {
 </script>
 <style lang="scss">
 .s-prefooter {
-    background: url("../assets/prefooter-bg.jpg") bottom center no-repeat, linear-gradient(to bottom, #ffffff 0, transparent 210px, transparent 100%);
+    background: url("../assets/prefooter-bg.jpg") bottom center no-repeat, linear-gradient(to bottom, #ffffff 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
 
     &__title {
         font: 600 6rem/1 "Montserrat", sans-serif;
         color: #222349;
-        padding: 70px 0 110px;
+        padding: 70px 0;
     }
 
     &__content {
@@ -41,21 +41,23 @@ export default {
         width: 1388px;
         margin: 0 auto;
         max-width: 100%;
+        padding: 0 40px;
+        box-sizing: border-box;
     }
     &__qr-wrapper {
-        width: 50%;
-        padding: 65px 5.8% 85px;
+        width: 60%;
+        padding: 50px 5.6%;
         box-sizing: border-box;
         background: #fff;
         border-radius: 50px;
-        margin-bottom: 20px;
+        margin: 20px 0 20px 125px;
     }
     &__text {
-        font: 400 2rem/1.5 "Montserrat", sans-serif;
-        margin-bottom: 50px;
+        font: 400 2.2rem/1.5 "Montserrat", sans-serif;
+        margin-bottom: 40px;
     }
     &__qr {
-        margin-bottom: 70px;
+        margin-bottom: 60px;
 
         img {
             max-width: 160px
@@ -66,10 +68,18 @@ export default {
         text-align: center;
         img {
             max-width: 98%;
+            max-height: 580px
         }
     }
     .buttons {
         justify-content: center;
+    }
+}
+@media(max-width: 1280px){
+    .s-prefooter {
+        &__qr-wrapper {
+            margin: 0 auto;
+        }
     }
 }
 @media(max-width: 640px){
@@ -102,6 +112,9 @@ export default {
             padding: 0;
             border-radius: 0;
             margin: 0;
+        }
+        &__content {
+            padding: 0;
         }
         .buttons {
             flex-direction: column;

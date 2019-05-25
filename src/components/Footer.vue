@@ -1,12 +1,12 @@
 <template>
   <div class="s-footer">
     <div class="s-footer__nav">
-        <a class="s-footer__nav-item" href="#">Privacy Policy</a>
-        <a class="s-footer__nav-item" href="#">Get it on Google Play</a>
-        <a class="s-footer__nav-item" href="#">Download on the App Store</a>
-        <a class="s-footer__nav-item" href="#">Sign in</a>
+        <a class="s-footer__nav-item" href="//eventswallet.com/en/privacy">{{$t('privacy')}}</a>
+        <a class="s-footer__nav-item" href="//play.google.com/store/apps/details?id=edsson.eventswallet">{{$t('getgplay')}}</a>
+        <a class="s-footer__nav-item" href="//itunes.apple.com/us/app/eventswallet/id1457564301?ls=1&mt=8">{{$t('getappstore')}}</a>
+        <a class="s-footer__nav-item" href="//eventswallet.com">{{$t('signin')}}</a>
     </div>
-    <div class="s-footer__copy">(c) All rights reserved, EventsWallet 2019</div>
+    <div class="s-footer__copy">(c){{$t('allrights')}}</div>
   </div>
 </template>
 
@@ -18,17 +18,17 @@
 
     &__nav {
         display: flex;
-        justify-content: space-between;
-        width: 1388px;
+        justify-content: space-around;
+        width: 1280px;
         margin: 0 auto 50px;
         max-width: 100%;
     }
     &__nav-item {
-        width: 25%;
+        // width: 20%;
         font: 400 1.8rem/1 "Montserrat", sans-serif;
         font-variant: small-caps;
         color: #f7f3e9;
-        text-align: left;
+        text-align: center;
         text-decoration: none;
 
         &:hover {
@@ -39,7 +39,7 @@
         width: 1388px;
         max-width: 100%;
         margin: 0 auto;
-        text-align: left;
+        text-align: center;
         color: #f7f3e9;
         font: 200 1.4rem/1 "Montserrat", sans-serif;
     }

@@ -3,17 +3,13 @@
     <div class="s-header__hat">
       <img src="../assets/logo.png" alt="" class="sheader__logo" />
       <div class="s-header__land-switcher">
-        <!--<LangSwitch />-->
+        <LangSwitch v-bind:onSelectLang='onSelectLang' lang='cn'/>
       </div>
     </div>
 
     <div class="s-header__wrapper">
       <div class="s-header__title-wrapper">
-        <div class="s-header__title">
-          <b>Y</b>our <span class="s-header__title_orange">events</span><br />
-          and tickets<br />
-          in a single <span class="s-header__title_blue">wallet</span>
-        </div>
+        <div class="s-header__title" v-html="$t('title')"></div>
 
         <Buttons v-if="chekWidth" />
       </div>
@@ -36,7 +32,11 @@ export default {
     LangSwitch,
     Buttons
   },
+  params: {
+    data: Object
+  },
   mounted: function () {
+      window.addEventListener('resize', this.getWindowWidth);
       window.addEventListener('resize', this.getWindowWidth);
   },
   beforeDestroy: function () {
@@ -50,14 +50,17 @@ export default {
   methods: {
 		getWindowWidth() {
 				// chekWidth
-		}
+    },
+    onSelectLang(lang){
+      console.log('child component said login', lang.d)
+    }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .s-header {
+  position: relative;
   min-height: 800px;
   background: url("../assets/header-bg.png") top center no-repeat;
 
@@ -65,7 +68,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1388px;
+    width: 1280px;
     max-width: 100%;
     height: 50px;
     margin: 0 auto;
@@ -89,8 +92,8 @@ export default {
   &__title {
     color: white;
     text-align: left;
-    font: 700 5.6rem/1.25 "Montserrat", sans-serif;
-    margin-top: 50px;
+    font: 700 5rem/1.25 "Montserrat", sans-serif;
+    margin-top: 80px;
     margin-bottom: 130px;
     text-transform: uppercase;
     width: 640px;
@@ -126,10 +129,11 @@ export default {
 }
 @media (max-width: 1388px){
   .s-header {
+    &__hat {width: 100%;}
     &__hat,
     &__title-wrapper {
       padding-left: 20px;
-      padding-right: 20px;
+      padding-right: 60px;
       box-sizing: border-box;
     }
   }
@@ -139,23 +143,29 @@ export default {
     &__hat,
     &__title-wrapper {
       padding-left: 100px;
+      padding-right: 120px;
     }
   }
 }
-@media (max-width: 1280px){
+@media (max-width: 960px){
   .s-header {
     &__hat,
     &__title-wrapper {
       padding-left: 60px;
+      padding-right: 80px;
     }
   }
 }
 @media(max-width: 640px){
   .s-header {
     background: url("../assets/header-bg-small.png") top center no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     min-height: 650px;
 
+    &__hat {
+      padding-left: 20px;
+      padding-right: 35px;
+    }
     &__wrapper {
       flex-direction: column;
       align-items: center;
@@ -165,6 +175,7 @@ export default {
       box-sizing: border-box;
       text-align: center;
       padding-left: 20px;
+      padding-right: 20px;
     }
     &__img-wrapper {
       width: 100%;

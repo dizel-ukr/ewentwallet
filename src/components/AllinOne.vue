@@ -1,10 +1,7 @@
 <template>
   <div class="s-allinone">
-    <div class="s-allinone__title">All events in a single Wallet!</div>
-    <div class="s-allinone__text">
-      From birthdays to music festivals – invite attendees to make it an
-      experience,<br />or save events to remember them all
-    </div>
+    <div class="s-allinone__title">{{$t('allevents')}}</div>
+    <div class="s-allinone__text" v-html="$t('frombirthday')" />
     <a class="s-allinone__link" v-on:click="scroll">Get the app ></a>
     <img v-if="checkWidth" class="s-allinone__img" src="../assets/allinone-img.png" alt="" />
     <img v-else class="s-allinone__img" src="../assets/allinone-img-small.png" alt="" />
@@ -39,7 +36,11 @@ export default {
   padding-top: 70px;
   padding-bottom: 85px;
   max-width: 100%;
-  background: linear-gradient(to bottom, #ffffff 0, transparent 210px, transparent 100%);
+  background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -o-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -moz-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -webkit-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
+  background-image: -ms-linear-gradient(to bottom, rgba(255,255,255,1) 0, rgba(255,255,255,0) 210px, rgba(255,255,255,0) 100%);
 
   &__title {
     font: 600 6rem/1 "Montserrat", sans-serif;
@@ -47,12 +48,12 @@ export default {
     margin: 0 0 20px;
   }
   &__text {
-    font: 400 2rem/1 "Montserrat", sans-serif;
+    font: 400 2rem/1.45 "Montserrat", sans-serif;
     color: #222349;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   &__link {
-    font: 600 1.8rem/1 "Montserrat", sans-serif;
+    font: 600 2rem/1 "Montserrat", sans-serif;
     color: #007aff;
     text-decoration: none;
     cursor: pointer;
@@ -62,8 +63,9 @@ export default {
     }
   }
   &__img {
-    margin-top: 90px;
-    max-width: 100%;
+    margin-top: 70px;
+    width: 1080px;
+    max-width: 90%;
 
     img {
         max-width: 98%;

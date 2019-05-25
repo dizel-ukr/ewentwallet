@@ -1,11 +1,8 @@
 <template>
   <div id="app">
-    <Header msg="Welcome to Your Vue.js App" />
-    <!--<HelloWorld msg="Welcome to Your Vue.js App" />-->
-
+    <Header />
     <Steps />
     <AllinOne />
-
     <PreFooter />
     <Footer />
   </div>
@@ -18,8 +15,6 @@ import AllinOne from "./components/AllinOne.vue";
 import PreFooter from "./components/PreFooter.vue";
 import Footer from "./components/Footer.vue";
 
-// import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "app",
   components: {
@@ -28,6 +23,11 @@ export default {
     AllinOne,
     PreFooter,
     Footer
+  },
+  methods: {
+    setLocale(locale) {
+      this.$i18n.locale = locale;
+    }
   }
 };
 </script>
@@ -40,9 +40,7 @@ body {
   margin: 0;
   font-size: 10px;
   background: #f7f3e9;
-}
-div, span {
-  // border: 1px solid red; // TODO
+  scroll-behavior: smooth;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -53,19 +51,19 @@ div, span {
   margin: 0;
   padding: 0;
 }
-@media(max-width: 1280px){
+@media (max-width: 1280px) {
   html,
   body {
     font-size: 9px !important;
   }
 }
-@media(max-width: 960px){
+@media (max-width: 960px) {
   html,
   body {
     font-size: 8px !important;
   }
 }
-@media(max-width: 720px){
+@media (max-width: 720px) {
   html,
   body {
     font-size: 7px !important;
